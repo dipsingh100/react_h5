@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import BookList from "./component/BookList";
+import Spinner from "./component/Spinner";
 
-function App() {
+//Using Hoc on BookList
+const BookListWithLoading = Spinner(BookList);
+
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate async book data fetch
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1 style={{textAlign: "center"}}>Book List</h1>
+      <hr />
+      <BookListWithLoading isLoading={isLoading} />
     </div>
   );
-}
+};
 
 export default App;
