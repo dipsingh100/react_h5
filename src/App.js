@@ -12,7 +12,7 @@ const App = () => {
     // Simulate async book data fetch
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 3000);
   }, []);
 
   return (
