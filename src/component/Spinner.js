@@ -5,7 +5,7 @@ import "../App.css"
 const Spinner = (WrappedComponent) => {
   return ({ isLoading , ...otherProps})=>{
     if (isLoading){
-        return <div className='loading'>Loading...Coming from Higher Order Component</div>
+        return <div className='loading'><h1>Loading...Coming from Higher Order Component</h1></div>
     }
     return <WrappedComponent {...otherProps}/>
   }

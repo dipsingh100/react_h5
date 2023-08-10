@@ -3,18 +3,20 @@ import "../App.css";
 
 //Pure Component
 const BookItem = (props) => {
-  return (
+  return (<>
+    <h2>Pure Component</h2>
     <div className="book-item">
       <div className="img-c">
         <img src={props.image} alt="book" />
       </div>
       <div className="desc">
-          <h2 className="book-title">{props.title}</h2>
-          <p>by {props.author}</p>
-          <p>₹{props.price}</p>
-          <button>Buy</button>
+        <h2 className="book-title">{props.title}</h2>
+        <p>by {props.author}</p>
+        <p>₹{props.price}</p>
+        <button>Buy</button>
       </div>
     </div>
+  </>
   );
 };
 
